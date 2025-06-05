@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage>{
         title: Text(_fragmentIndex == 0 ? ConsultaCepFragment.title :
         ConsultaCidadesFragment.title),
       ),
-      body: _buidBody(),
+      body: _buildBody(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _fragmentIndex,
           items: [
@@ -43,9 +43,22 @@ class _HomePageState extends State<HomePage>{
           }
         },
       ),
+      floatingActionButton: _buildFloatingActionButton(),
     );
   }
 
-  Widget _buidBody() => _fragmentIndex == 0 ? ConsultaCepFragment() :
+  Widget _buildBody() => _fragmentIndex == 0 ? ConsultaCepFragment() :
       ConsultaCidadesFragment();
+
+  Widget? _buildFloatingActionButton() {
+    if (_fragmentIndex == 0){
+      return null;
+    }
+    return FloatingActionButton(
+      child: Icon(Icons.add),
+        tooltip: 'Cadastrar',
+        onPressed: () {}
+    );
+
+  }
 }
