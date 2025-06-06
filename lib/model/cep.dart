@@ -1,5 +1,9 @@
 
+import 'package:json_annotation/json_annotation.dart';
 
+part 'cep.g.dart';
+
+@JsonSerializable()
 class Cep {
 
   final String? cep;
@@ -13,10 +17,11 @@ class Cep {
   final String? regiao;
   final String? ibge;
   final String? gia;
-  final String? ddd;
+  @JsonKey(name: 'ddd')
+  final String? codiArea;
   final String? siafi;
 
   Cep({ this. cep, this.logradouro, this.complemento, this.unidade,
   this.bairro, this.localidade, this.uf, this.estado, this.regiao,
-  this.ibge, this.gia, this.ddd, this.siafi});
+  this.ibge, this.gia, this.codiArea, this.siafi});
 }
