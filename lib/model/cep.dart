@@ -26,5 +26,5 @@ class Cep {
   this.ibge, this.gia, this.codiArea, this.siafi});
 
   factory Cep.fromJson(Map<String, dynamic> json) => _$CepFromJson(json);
-  Map<String, dynamic> toJoson() => _$CepToJson(this);
+  Map<String, dynamic> toJson() => _$CepToJson(this);
 }
